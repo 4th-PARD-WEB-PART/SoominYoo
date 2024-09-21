@@ -14,3 +14,4 @@
 버튼은 취소 버튼과 가입 버튼이 있음
 
 ## Screenshot
+![Uploading image.png…]()
