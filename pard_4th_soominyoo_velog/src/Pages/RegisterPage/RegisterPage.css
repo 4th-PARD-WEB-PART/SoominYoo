@@ -1,0 +1,133 @@
+/* 전체 컨테이너 */
+.register-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    text-align: left;
+}
+
+/* header */
+.header {
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.header p {
+    font-size: 19px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* input 스타일 */
+.input-field {
+    margin-bottom: 30px;
+    padding-bottom: 5px;
+    position: relative;
+}
+
+/* label 스타일 */
+.register-label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    color: #adb5bd;
+    text-align: left;
+    transition: color 0.3s ease;
+}
+
+/* 기본 입력 스타일 */
+.register-input {
+    padding: 10px 0;
+    border: none;
+    border-radius: 0;
+    font-size: 1rem;
+    color: #555;
+    background-color: transparent;
+    box-sizing: border-box;
+    border-bottom: 1px solid #ACB5BD;
+    text-align: left;
+}
+
+/* placeholder 색 설정 */
+.register-input::placeholder {
+    color: #ACB5BD;
+    transition: color 0.3s ease;
+}
+
+/* 밑줄 색상 변경 */
+.register-input:focus {
+    outline: none;
+    border-bottom-color: #15B886;
+    color: #15B886;
+}
+
+.register-input:focus::placeholder {
+    color: #15B886;
+}
+
+/* 라벨도 포커스 시 색상 변경 */
+.input-field:focus-within .register-label {
+    color: #15B886;
+}
+
+/* 밑줄 길이 설정 */
+.input-field.name .register-input { width: 249px; }
+.input-field.email .register-input { width: 333px; }
+.input-field.password .register-input { width: 274px; }
+.input-field.introduce .register-input { width: 373px; }
+
+/* 약관 동의 */
+.register-agreement {
+    margin: 20px 0;
+    text-align: left;
+}
+
+.register-checkbox {
+    margin-right: 10px;
+}
+
+/* 버튼 */
+.button-group {
+    display: flex;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.register-button {
+    width: 93px; 
+    height: 41px;
+    border: none;
+    border-radius: 25px; 
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+}
+
+/* 취소 버튼 */
+.register-cancel-button {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+/* 가입 버튼 */
+.register-submit-button {
+    background-color: #15B886;
+    color: white;
+}
+
+.register-agreement label span {
+    color: #15B886; 
+    cursor: pointer;
+}
+
+
