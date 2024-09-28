@@ -14,4 +14,13 @@
 버튼은 취소 버튼과 가입 버튼이 있음
 
 ## Screenshot
+<img width="1259" alt="image" src="https://github.com/user-attachments/assets/890bed1e-97a3-49ba-a36a-d25c7b54ef90">
+
+
+# 과제2: 리스트 UI 클론 코딩
+
+## Overview
+블로그 사이트의 주요 기능을 구현하였으며, 탐색 바, 블로그 포스트 카드, 검색 기능, 각 포스트에 대한 좋아요 버튼 등의 기능을 포함하고 있음.
+
+## Screenshot
 ![Uploading image.png…]()
