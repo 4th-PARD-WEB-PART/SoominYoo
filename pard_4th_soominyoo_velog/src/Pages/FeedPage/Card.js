@@ -1,12 +1,21 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const FeedCard = ({ title, content, date, commentCount, author, likes }) => {
   const [liked, setLiked] = useState(false);
   const [likeCount, setLikeCount] = useState(likes);
+  const navigate = useNavigate(); 
 
   const toggleLike = () => {
     setLiked(!liked);
     setLikeCount(liked ? likeCount - 1 : likeCount + 1);
+  };
+
+  const handleCardClick = () => {
+    // 카드 클릭 시 DetailPage로 이동
+    navigate('/detail', {
+      state: { title, content, date, commentCount, author, likes }
+    });
   };
 
   const cardStyle = {
@@ -16,14 +25,15 @@ const FeedCard = ({ title, content, date, commentCount, author, likes }) => {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
-    marginBottom: '10px', 
+    marginBottom: '10px',
+    cursor: 'pointer', 
   };
 
   const imgStyle = {
     width: '300px',
     height: '150px',
     objectFit: 'cover',
-    backgroundColor: '#e57373', 
+    backgroundColor: '#e57373',
   };
 
   const titleStyle = {
@@ -71,7 +81,7 @@ const FeedCard = ({ title, content, date, commentCount, author, likes }) => {
   };
 
   return (
-    <div style={cardStyle}>
+    <div style={cardStyle} onClick={handleCardClick}>
       <div style={imgStyle}></div>
       <h2 style={titleStyle}>{title}</h2>
       <p style={contentStyle}>{content}</p>
@@ -82,7 +92,13 @@ const FeedCard = ({ title, content, date, commentCount, author, likes }) => {
           <p>{author}</p>
         </div>
 
-        <button onClick={toggleLike} style={buttonStyle}>
+        <button
+          onClick={(e) => {
+            e.stopPropagation(); 
+            toggleLike();
+          }}
+          style={buttonStyle}
+        >
           {liked ? '❤️' : '🤍'} {likeCount}
         </button>
       </div>
