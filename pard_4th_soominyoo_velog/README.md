@@ -14,7 +14,7 @@
 버튼은 취소 버튼과 가입 버튼이 있음
 
 ## Screenshot
-![Uploading image.png…]()
+<img width="867" alt="image" src="https://github.com/user-attachments/assets/f5669f67-c17d-494a-95ba-a8e3c16b2e95">
 
 
 # 과제2: 리스트 UI 클론 코딩
@@ -25,3 +25,24 @@
 ## Screenshot
 
 <img width="1259" alt="image" src="https://github.com/user-attachments/assets/890bed1e-97a3-49ba-a36a-d25c7b54ef90">
+
+## 과제3: Recoil을 사용해서 페이지간 이동 구현
+* 그동안 구현한 페이지를 연결 시키기
+- RegisterPage
+    - 경로 : /
+- FeedPage
+    - 경로 : /feed
+- DetailPage 컴포넌트
+    - 경로 : /detail
+- EditPage
+    - 경로: /edit
+ 
+* EditPage 구현하기
+- Atom.js를 설정하여 recoil을 사용한 정보 업데이트
+
+* Register 페이지에서 정보를 입력하고 FeedPage에서 프로필 이미지를 누르면 EditPage로 이동하기
+- 이동했을 때 회원가입 때 입력한 정보가 input값에 있게 하기)
+
+## Screenshot
+
+ ![Uploading image.png…]()
