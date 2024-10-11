@@ -13,7 +13,7 @@ const FeedPage = () => {
       date: '2024년 8월 14일',
       commentCount: 23,
       author: '살몬',
-      likes: 47,
+      likes: 27,
     },
     {
       imgSrc: '/img/sample1.png',
@@ -22,7 +22,7 @@ const FeedPage = () => {
       date: '2024년 8월 14일',
       commentCount: 23,
       author: '살몬',
-      likes: 47,
+      likes: 37,
     },
     {
       imgSrc: '/img/sample1.png',
@@ -66,13 +66,11 @@ const FeedPage = () => {
     feed.title.includes(searchTerm)
   );
 
-  // 화면 배경색 설정
   const pageStyle = {
-    backgroundColor: '#F8F9FA',  // 원하는 배경색 설정
+    backgroundColor: '#F8F9FA', 
     padding: '32px',
     maxWidth: '1200px',
     margin: '0 auto',
-    // minHeight: '100vh',  // 페이지의 높이를 화면 높이에 맞춤
   };
 
   const listStyle = {

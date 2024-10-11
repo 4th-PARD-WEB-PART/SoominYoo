@@ -1,52 +1,46 @@
 import React, { useState } from "react";
 import { useRecoilState } from 'recoil';  
-import { useNavigate } from 'react-router-dom'; 
-import { userState } from '../../Atom';  // Atom.js에서 userState 가져오기
-import './RegisterPage.css'; 
+import { useNavigate } from 'react-router-dom';
+import { userState } from '../../Atom';  
+import '../../Pages/RegisterPage/RegisterPage.css'; 
 
-function RegisterPage() {
+function EditPage() {
   const navigate = useNavigate();
   const [userData, setUserData] = useRecoilState(userState);  
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    password: '',
-    introduction: '',
-    agreement: false,
+    name: userData.name || '',
+    email: userData.email || '',
+    password: userData.password || '',  
+    introduction: userData.introduction || '',
+    agreement: userData.agreement || false,  
   });
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData({
       ...formData,
-      [name]: type === 'checkbox' ? checked : value
+      [name]: type === 'checkbox' ? checked : value,
     });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // 모든 필드가 채워졌는지 확인
-    if (formData.name && formData.email && formData.password && formData.introduction && formData.agreement) {
-      // Recoil 상태에 사용자 데이터 저장
-      setUserData({
-        name: formData.name,
-        email: formData.email,
-        password: formData.password,
-        introduction: formData.introduction,
-        agreement: formData.agreement,
-      });
-      // FeedPage로 이동
-      navigate('/feed');
-    } else {
-      alert('모든 필드를 정확하게 입력해주세요.');
-    }
+    // Recoil 상태 업데이트
+    setUserData({
+      name: formData.name,
+      email: formData.email,
+      password: formData.password,
+      introduction: formData.introduction,
+      agreement: formData.agreement,
+    });
+    navigate('/feed');
   };
 
   return (
     <form onSubmit={handleSubmit} className="register-container">
       <div className="header">
-        <h1>환영합니다!</h1>
-        <p>기본 회원 정보를 등록해주세요</p>
+        <h1>회원정보 수정</h1>
+        <p>회원 정보를 수정해주세요</p>
       </div>
 
       {/* 이름 */}
@@ -116,10 +110,10 @@ function RegisterPage() {
       </div>
 
       <div className="button-group">
-        <button type="submit" className="register-button register-submit-button">가입</button>
+        <button type="submit" className="register-button register-submit-button">수정</button>
       </div>
     </form>
   );
 }
 
-export default RegisterPage;
+export default EditPage;

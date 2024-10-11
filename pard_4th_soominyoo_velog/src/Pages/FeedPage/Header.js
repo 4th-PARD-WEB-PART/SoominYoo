@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';  // useNavigate 훅 가져오기
 import velogLogo from '../../img/velog-logo.png';  // 로고 이미지 
 import trendingIcon from '../../img/trending-icon.png';  // 트렌딩 아이콘 이미지 
 import latestIcon from '../../img/latest-icon.png';  // 최신 아이콘 이미지 
@@ -8,6 +9,12 @@ import searchIcon from '../../img/search-icon.png';  // 검색 아이콘 이미�
 import profileIcon from '../../img/profile-icon.png';  // 프로필 아이콘 이미지 
 
 const Header = () => {
+  const navigate = useNavigate();  
+
+  const handleProfileClick = () => {
+    navigate('/edit'); 
+  };
+
   const headerStyle = {
     display: 'flex',
     justifyContent: 'space-between',
@@ -90,7 +97,13 @@ const Header = () => {
         <img src={bellIcon} alt="알림 아이콘" style={iconStyle} /> 
         <img src={searchIcon} alt="검색 아이콘" style={iconStyle} /> 
         <button style={buttonStyle}>새 글 작성</button>
-        <img src={profileIcon} alt="프로필 아이콘" style={iconStyle} /> 
+        {/* 프로필 아이콘 클릭 시 EditPage로 이동 */}
+        <img 
+          src={profileIcon} 
+          alt="프로필 아이콘" 
+          style={{ ...iconStyle, cursor: 'pointer' }} 
+          onClick={handleProfileClick}  
+        /> 
       </div>
     </header>
   );

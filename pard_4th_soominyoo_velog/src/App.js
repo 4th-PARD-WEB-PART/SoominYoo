@@ -4,17 +4,23 @@ import './App.css';
 import RegisterPage from './Pages/RegisterPage/RegisterPage';
 import FeedPage from './Pages/FeedPage/FeedPage';
 import DetailPage from './Pages/DetailPage/DetailPage';
+import EditPage from './Pages/EditPage/EditPage';
+import { RecoilRoot } from 'recoil';
 
 function App() {
   return (
     <Router>
       <div className="App">
         {/* Routes 사용 */}
-        <Routes>
-          <Route path="/" element={<RegisterPage />} />
-          <Route path="/feed" element={<FeedPage />} />
-          <Route path="/detail" element={<DetailPage />} />
-        </Routes>
+        <RecoilRoot>
+          <Routes>
+            <Route path="/" element={<RegisterPage />} />
+            <Route path="/feed" element={<FeedPage />} />
+            <Route path="/edit" element={<EditPage />} />
+            <Route path="/detail" element={<DetailPage />} />
+          </Routes>
+        </RecoilRoot>
+        
       </div>
     </Router>
   );
